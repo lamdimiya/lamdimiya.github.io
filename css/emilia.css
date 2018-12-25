@@ -145,7 +145,7 @@ article h3,p{
 .column2{
     left: 33%;
     width: 33%;
-    float:left;
+    float:center;
 }
 .column3{
     right: 0; 
