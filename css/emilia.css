@@ -156,11 +156,7 @@ section h3,p{
 .column2{
     left: 33%;
     width: 33%;
-<<<<<<< HEAD
     float: center;
-=======
-    float:center;
->>>>>>> 881e81b77d41e394af217dbb3aa4587df97e56a6
 }
 .column3{
     right: 0; 
