@@ -24,12 +24,10 @@ body{
     margin-top:5px;
 }
 .rezero{
-    
 	font-size: 13px !important;
 	font-weight: normal !important;
 	white-space: nowrap !important;
-    	text-transform: uppercase !important;
-    
+    text-transform: uppercase !important;
 }
 /* Проверка
 #Main{
@@ -102,8 +100,6 @@ img{
     letter-spacing: 3px;
     padding:15px;
 }
-
-
 main{
     background-color: #fff;
     margin:0;
@@ -137,17 +133,14 @@ section h3,p{
 .tree-columns{
     position: relative;
     text-align: center;
-    
 }
 .tree-columns div{
    display: inline-block;
-    
 }
 .column{
     border:1px solid #fff;
     background-color: #f0e8ff;
     box-sizing: content-box;
-    
 }
 .column1{
     width: 33%;
@@ -173,7 +166,6 @@ section h3,p{
     padding:15px;
     text-align: center;
     margin: 5px;   
-    
 }
 .buttom a{
     padding:0;
