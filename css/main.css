@@ -1,0 +1,35 @@
+﻿*{
+	padding: 0;
+	margin:0;
+}
+body{
+	color:white;
+}
+#global_header{
+	background: black;
+}
+
+div#global_header{
+	font-family: "Motiva Sans", Sans-serif;
+	font-weight: normal;
+	font-size: normal;
+}
+div#global_header .content{
+	width: 900px;
+	height: 50px;
+	margin: 0 auto;
+	position: relative;
+}
+.blame{
+	width: 200px;
+}
+
+
+
+#bubble {
+  font-size: 25px;
+  font-family: Comic Sans MS, Verdana, monospace;
+  color: #2d509b;
+  font-weight: bold;
+}
+
