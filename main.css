@@ -1,0 +1,85 @@
+﻿html,
+body{
+	margin: 0;
+	padding: 0;
+	font-size:21px;
+	font-family: 'Jura', sans-serif;
+	
+
+}
+.backg{
+	z-index: -2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+}
+header{
+	background: black;
+	overflow: hidden;
+}
+nav li{
+	list-style: none;
+	display: inline-block;
+}
+nav ul a{
+	text-decoration: 	none;
+	color: #d2d2d2 ;
+	text-transform: uppercase;
+	padding:1.1em 1em;
+	background:black;
+}
+nav a:hover{
+	color:white;
+}
+nav { 
+display: flex; }
+
+.logo{
+	width:120px;
+	height: 67px;
+	display: inline;}
+.logo2{
+	width:120px;
+	height: 67px;
+	display: inline;
+	visibility: hidden;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.imglogo:hover .logo2{
+	visibility: visible;
+
+}
+.imglogo{
+	cursor: pointer;
+	position: relative;
+	left:1em;
+	top:0.2em;
+}
+.signup{
+	float:right;
+		
+}
+.signup img{
+	width:65px;
+	height: auto;
+	cursor: pointer;
+}
+.signupimg{
+	display: inline;
+	z-index: 1;
+}
+.signupimg::before{
+	content:"signup2.png";
+	z-index: -1;
+	position: absolute;
+	top:0;
+	left: 0;
+
+}
+.signup:hover .signupimg::before{
+z-index: 999;
+
+}
