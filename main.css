@@ -72,6 +72,6 @@ display: flex; }
 	filter: brightness(0) invert(1);
 }
 .video{
-	width:400px;
-	height: 300px;
+	width:800px;
+	height: 600px;
 }
