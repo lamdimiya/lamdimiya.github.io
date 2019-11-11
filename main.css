@@ -16,19 +16,24 @@ body{
 }
 nav{width: 100%}
 header{
-	background: black;
+	background: #111111;
 	overflow: hidden;
+	max-height: 6vh;
 }
 nav li{
 	list-style: none;
 	display: inline-block;
+}
+a{
+	text-decoration: none;
+
 }
 nav ul a{
 	text-decoration: 	none;
 	color: #d2d2d2 ;
 	text-transform: uppercase;
 	padding:1.1em 1em;
-	background:black;
+	background:#111111;
 }
 nav a:hover{
 	color:white;
@@ -74,4 +79,24 @@ display: flex; }
 .video{
 	width:800px;
 	height: 600px;
+}
+.container{
+	background: #111111;
+	color:#d2d2d2;
+
+}
+.container{
+	font-size:15px;
+
+}
+.container a {
+	color :#d2d2d2;
+}
+}
+.col-right, .col-center, .col-left{
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+
 }
