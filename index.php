@@ -2,8 +2,8 @@
 <?php 
   include("db.php");
   if (isset($_POST['submitLog'])){
-    $getName = $_POST['name'];
-    $getPass = $_POST['pass'];
+    $getName = $_POST['userN'];
+    $getPass = $_POST['userP'];
     $result = mysqli_query($connect, "SELECT * FROM `users` WHERE `name` = '$getName' && `pass` = '$getPass' LIMIT 1");
       if(mysqli_num_rows($result) > 0){
         if($result_fetch = mysqli_fetch_assoc($result)){
@@ -36,11 +36,7 @@
 
   }
 ?>
-<?php 
-  if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
-    header('location:index.php');
-  }
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -79,6 +75,14 @@
         echo "<span>".$_SESSION['name']."</span>";
         echo '<div> <a href="logout.php">LOGOUT</a></div>';
       }
+    ?>
+    <?php  
+    if(isset($_GET['logout'])){
+      unset($_SESSION['name']);
+      unset($_SESSION['pass']);
+      unset($_SESSION['email']);
+      unset($_SESSION['admin']);
+    }
     ?>
 
 		<!-- Форма регистрации--> 
