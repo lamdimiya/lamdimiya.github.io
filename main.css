@@ -20,9 +20,15 @@ header{
 	background: #111111;
 	overflow: hidden;
 	height: 8%;
+	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	
+	z-index: 999;
+}
+header:hover{
+
 }
 nav li{
 	list-style: none;
@@ -81,16 +87,24 @@ nav a:hover{
 	width:800px;
 	height: 600px;
 }
+footer{
+	background: rgba(17,17,17,0.9);
+
+}
 .container-f{
-	background: #111111;
+	margin: 0 auto;
+	width: 50%;
 	font-size:15px;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
 }
 .container-f a {
 	color :#d2d2d2;
 }
 }
 .col-right, .col-center, .col-left{
-	position: relative;
+	
 	min-height: 1px;
 	padding-left: 15px;
 	padding-right: 15px;

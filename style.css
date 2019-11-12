@@ -1,0 +1,106 @@
+﻿body {
+
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.login-page {
+	width: 360px;
+	padding: 10% 0 0;
+	margin: auto;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: rgba(17, 17, 17, 0.8);
+	max-width: 360px;
+	margin: 0;
+	padding: 45px;
+	text-align: center;
+}
+
+ .form input {
+ 	font-family: 'Cinzel', serif;
+ 	outline: 1;
+ 	background: #f2f2f2;
+ 	width: 100%;
+ 	border: 0;
+ 	margin: 0 0 15px;
+ 	padding: 15px;
+ 	box-sizing: border-box;
+ 	font-size: 14px;
+ }
+
+ .form .button {
+ 	font-family: 'Jura', sans-serif;
+ 	text-transform: uppercase;
+ 	outline: 0;
+ 	background: #d2d2d2;
+ 	width: 100%;
+ 	border: 0;
+ 	padding: 15px;
+ 	color: #111111;
+ 	font-size: 19px;
+ 	cursor: pointer;
+ }
+
+.form .button:hover, .form .button:active {
+	background: white;
+}
+
+.form .message {
+	font-family: 'Cinzel', serif;
+	margin: 15px 0 0;
+	color: aliceblue;
+	font-size: 17px;
+}
+
+.form .message a {
+	color: #b90000;
+	text-decoration: none;
+}
+.form .message a:hover{
+	color:#e50000;
+}
+.form .registration-form {
+	display: none;
+}
+
+#window {
+	z-index: 150;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.close {
+	float: right;
+	margin-top: -35px;
+	margin-bottom: 10px;
+	position: relative;
+	left:35px;
+	cursor: pointer;
+	width: 25px;
+	padding: 2px;
+	
+}
+
+.close:hover {
+	filter: brightness(0) invert(1);
+}
+
+#gray {
+	background: rgba(1, 1, 1, 0.75);
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	z-index: 100;
+}

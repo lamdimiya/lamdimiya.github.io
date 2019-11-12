@@ -1,18 +1,60 @@
-﻿<!DOCTYPE html>
+<?php session_start(); ?>
+<?php 
+  include("db.php");
+  if (isset($_POST['submitLog'])){
+    $getName = $_POST['name'];
+    $getPass = $_POST['pass'];
+    $result = mysqli_query($connect, "SELECT * FROM `users` WHERE `name` = '$getName' && `pass` = '$getPass' LIMIT 1");
+      if(mysqli_num_rows($result) > 0){
+        if($result_fetch = mysqli_fetch_assoc($result)){
+          $admin = $result_fetch['admin'];  
+        }
+          $_SESSION['name'] = $getName;
+          $_SESSION['pass'] = $getPass;
+          $_SESSION['admin'] = $admin;
+      }
+  }
+
+  if (isset($_POST['submitReg'])){
+    $getName = $_POST['name'];
+    $getPass = $_POST['pass'];
+    $getEmail = $_POST['email'];
+    if (empty($getName) || empty($getPass) || empty($getEmail)){
+      return;
+    }
+    if($queryUser = mysqli_query($connect, "SELECT * FROM `users` WHERE `name` = '$getName'")){
+        if(mysqli_num_rows($queryUser)>0){
+            header('location:index.php?isset');
+            exit(); 
+        }
+    }
+   mysqli_query($connect, "INSERT INTO `users` (`name`,`pass`,`email`) VALUES('$getName','$getPass', '$getEmail')");
+    $_SESSION['name'] = $getName;
+    $_SESSION['pass'] = $getPass;
+    $_SESSION['email'] = $getEmail;
+    $_SESSION['admin'] = 0;
+
+  }
+?>
+<?php 
+  if(isset($_SESSION['admin']) && $_SESSION['admin'] == 0){
+    header('location:index.php');
+  }
+?>
+
+<!DOCTYPE html>
 <html>
 
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=sssssssss&display=swap" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Jura&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="slider.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-
 	<script src="signup.js"></script>
 	<script src="slider.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 <header>
@@ -32,33 +74,43 @@
 			<li><a href="">контакты</a></li>
 		</ul>
 		</nav>
+    <?php 
+      if(isset($_SESSION['name'])){
+        echo "<span>".$_SESSION['name']."</span>";
+        echo '<div> <a href="logout.php">LOGOUT</a></div>';
+      }
+    ?>
+
 		<!-- Форма регистрации--> 
-	<center><button class="regButton" onclick="show('block')">Регистрация</button></center>
-<div id="gray"></div>
-  <div id="window">
-    <div class="login-page">
-      <div class="form">
-        <img class="close" src="img/close.png" onclick="show('none')">
-        <form class="registration-form" action="reg.php" method="POST">
-          <input type="text" name="name" placeholder="username">
-          <input type="password" name="pass" placeholder="password">
-          <input type="text" name="email" placeholder="email id">
-          <input type="submit" name="submitReg" class="button" value="Зарегестрироваться">
-          <p class="message">Already Registered? <a href="#">Login</a></p>
-        </form>
+<a onclick="show('block')" class="regButton"><div class="signup"><img src="img/signup.png" class=signupimg></div></a>
+  <div id="gray"></div>
+    <div id="window">
+      <div class="login-page">
+        <div class="form">
+          <img class="close" src="img/close.png" onclick="show('none')">
+          <?php if(isset($_GET['isset'])){
+            echo '<h4 style="color:#b90000; position:relative;top:-20px;"> User already registered </h4>';
+          }?>
+          <form class="registration-form" action="" method="POST">
+            <input type="text" name="name" placeholder="username">
+            <input type="password" name="pass" placeholder="password">
+            <input type="text" name="email" placeholder="email id">
+            <input type="submit" name="submitReg" class="button" value="Зарегестрироваться">
+            <p class="message">Already Registered? <a href="#">Login</a></p>
+          </form>
 
-        <form class="login-form" action="login.php" method="POST">
-          <input type="text" name="userN" placeholder="username">
-          <input type="password" name="userP" placeholder="password">
-          <input type="submit" name="submitLog" class="button" value="Войти">
-          <p class="message">
-            Not Registered? <a href="#">Register</a>
-          </p>
-        </form>
-
+          <form class="login-form" action="" method="POST">
+            <input type="text" name="userN" placeholder="username">
+            <input type="password" name="userP" placeholder="password">
+            <input type="submit" name="submitLog" class="button" value="Войти">
+            <p class="message">
+              Not Registered? <a href="#">Register</a>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+
 
 <!--Конец-->
 
@@ -328,6 +380,7 @@
       interval: 5000,
       pause: true
     }));</script>
+
 <script type="text/javascript">
   $('.message a').click(function() {
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
