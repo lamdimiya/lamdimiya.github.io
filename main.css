@@ -4,22 +4,25 @@ body{
 	padding: 0;
 	font-size:17px;
 	font-family: 'Jura', sans-serif;
-	background: url(img/back.png);
-	background-size: cover;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("http://suitelife.com/blog/wp-content/uploads/2017/12/empty-cinema.jpg");
 
+	background-size: cover;
+	color :#d2d2d2;
 }
-.backg{
-	z-index: -2;
-	position: fixed;
+
+nav{
 	width: 100%;
-	height: 100%;
-	opacity: 0.6;
+	max-height: 100vh;
+	display: flex;
+	align-items: center;
 }
-nav{width: 100%}
 header{
 	background: #111111;
 	overflow: hidden;
-	max-height: 6vh;
+	height: 8%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 nav li{
 	list-style: none;
@@ -39,15 +42,12 @@ nav ul a{
 nav a:hover{
 	color:white;
 }
-nav { 
-display: flex; }
-
 .logo{
-	width:120px;
+	width:170px;
 	height: 67px;
 	display: inline;}
 .logo2{
-	width:120px;
+	width:170px;
 	height: 67px;
 	display: inline;
 	visibility: hidden;
@@ -72,7 +72,7 @@ display: flex; }
 	cursor: pointer;
 }
 .regButton{
-	float:right;
+	
 }
 .signupimg:hover{
 	filter: brightness(0) invert(1);
@@ -81,16 +81,11 @@ display: flex; }
 	width:800px;
 	height: 600px;
 }
-.container{
+.container-f{
 	background: #111111;
-	color:#d2d2d2;
-
-}
-.container{
 	font-size:15px;
-
 }
-.container a {
+.container-f a {
 	color :#d2d2d2;
 }
 }
@@ -100,4 +95,19 @@ display: flex; }
 	padding-left: 15px;
 	padding-right: 15px;
 
+}
+.vspace-40{
+	height: 40px;
+}
+.container-end{
+box-sizing: border-box;
+vertical-align: baseline;
+width: 1170px;
+min-width: 1200px;
+}
+.container{
+margin-right: auto;
+margin-left: auto;
+padding-left:15px;
+padding-right: 15px;
 }
